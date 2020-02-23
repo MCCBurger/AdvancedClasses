@@ -9,18 +9,18 @@ class Employee(
     var startDate: String
 ) {
     //Declare and initialize variables
-    val currency = DecimalFormat("\$###,###,###.00")
-    var payment = 0.0;
-    var weeklyPay = ""
+    private val currency = DecimalFormat("\$###,###,###.00")
+    private var payment = 0.0;
+    private var weeklyPay = ""
 
     //Calculate weekly pay based on rate,shift, and hours worked
     fun calculate(hoursIn: Double) {
 
         if (shift == 2)
-            payRate = payRate * 1.05
+            payRate *= 1.05
 
         if (shift == 3)
-            payRate = payRate * 1.10
+            payRate *= 1.10
 
         if (hoursIn <= 40.00)
             payment = payRate * hoursIn
